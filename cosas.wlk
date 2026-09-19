@@ -21,6 +21,7 @@ object bumblebee {
 	method peligrosidad() { return transformacion.peligro()}
 	method peso() { return 800 }
 	method transformacion(_transformacion) { transformacion = _transformacion}
+	method transformacion() { return transformacion }
 	method bultos() { return 2 }
 	method efectoDeAccidente() { transformacion = transformacion.cambiarEstado()}
 }
@@ -40,6 +41,7 @@ object paqueteDeLadrillos {
 	method peligrosidad() { return 2}
 	method peso() { return 2 * cantidadLadrillos}
 	method cantidadLadrillos(_cantidadLadrillos) { cantidadLadrillos = _cantidadLadrillos}
+	method cantidadLadrillos { return cantidadLadrillos }
 	method bultos() {
 		return if (cantidadLadrillos <= 100) {
 			1
@@ -64,6 +66,7 @@ object bateriaAntiaerea {
 
 	method peso() { return cargadaCon.peso()}
 	method cargadaCon(_cargadaCon) { cargadaCon = _cargadaCon }
+	method cargadaCon { return cargadaCon }
 	method peligrosidad() { return cargadaCon.peligro() }
 	method bultos() { return cargadaCon.bultos() }
 	method efectoDeAccidente(){ cargadaCon = otroObjeto }
@@ -92,6 +95,8 @@ object residuosRadiactivos {
 
 object contenedorPortuario {
 	const cosas = #{}
+
+	method cosas() { return cosas }
 
 	method peso() { return 100 + self.pesoDeCarga()}
 
