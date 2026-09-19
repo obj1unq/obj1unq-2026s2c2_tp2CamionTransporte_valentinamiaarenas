@@ -41,7 +41,7 @@ object paqueteDeLadrillos {
 	method peligrosidad() { return 2}
 	method peso() { return 2 * cantidadLadrillos}
 	method cantidadLadrillos(_cantidadLadrillos) { cantidadLadrillos = _cantidadLadrillos}
-	method cantidadLadrillos { return cantidadLadrillos }
+	method cantidadLadrillos() { return cantidadLadrillos }
 	method bultos() {
 		return if (cantidadLadrillos <= 100) {
 			1
@@ -66,7 +66,7 @@ object bateriaAntiaerea {
 
 	method peso() { return cargadaCon.peso()}
 	method cargadaCon(_cargadaCon) { cargadaCon = _cargadaCon }
-	method cargadaCon { return cargadaCon }
+	method cargadaCon() { return cargadaCon }
 	method peligrosidad() { return cargadaCon.peligro() }
 	method bultos() { return cargadaCon.bultos() }
 	method efectoDeAccidente(){ cargadaCon = otroObjeto }
@@ -90,7 +90,7 @@ object residuosRadiactivos {
 	method peso(_peso) { peso = _peso }
 	method peligrosidad() { return 200 }
 	method bultos() { return 1 }
-	method efectoDeAccidente() { peso += 20 }
+	method efectoDeAccidente() { peso += 15 }
 }
 
 object contenedorPortuario {
@@ -108,7 +108,7 @@ object contenedorPortuario {
 		return if (cosas.isEmpty()) {
 			0
 		} else {
-			self.objetoConMayorPeligrosidad()
+			self.objetoConMayorPeligrosidad().peligrosidad()
 		}
 	}
 
