@@ -282,6 +282,24 @@ En el camión quedan Bumblebee y arena a granel.
 * Describir los polimorfismos asociados a las colecciones: 
 
    - ¿Qué nombre tiene el tipo de los objetos polimórficos?
+     Tipo Objetos = Knight Rider, arena a granel, paquete de ladrillos, residuos radiactivos, batería antiaérea, Bumblebee, contenedor portuario y embalaje de seguridad.
+     Tipo Almacenaje = Contenedor portuario y camion.
+     Tipo Camino = Ruta 9 y caminos vecinales.
+     Tipo Carga = Misiles, otros objetos.
+     Tipo Transformacion = Auto y robot.
+     Tipo Destino = Almace.
+
    - ¿Qué mensajes componen ese tipo?
+     Tipo Objetos = peso(), peligrosidad(), bultos(), efectoAccidente().
+     Tipo Almacenaje = cosas(), cargar(unaCosa), pesoDeCarga() y cantidadDeBultosDeObjetos().
+     Tipo Camino = puedeCircular(unCamion).
+     Tipo Carga = peso(), peligro() y bultos().
+     Tipo Transformacion = peligro() y cambiarEstado().
+     Tipo Destino = almacenarCarga(objetos)
    - ¿Qué objetos son los emisores de los mensajes polimórficos?
+     camion: emite mensajes del tipo Objeto hacia los elementos que tiene cargado "objetoConPeligrosidadDe(nivel)", "objetoConMayorPeso()" y "sufrirAccidente" entre otros. Emite mensajes del tipo Destino con "llegarADestino(destino)" en "transportar(destino, camino") hacia el destino parametrizado, con el ultimo tambien emite del tipo Camino, con "validarTransportar(camino)".
+     bumblebee: emite mensaje del tipo Transformacion hacia el estado actual de transformacion, con "peligro()" en "peligrosidad()" y con "cambiarEstado()" con "efectoDeAccidente()"
+     bateriaAntiaerea: Emite mensajes del tipo Carga su estado actual con carga, con "butos()" en (self) "bultos()", "peso()" en (self) "peso()" y "peligro()" en "peligrosidad()".
+     cargaPortuaria: Emite mensajes del tipo Objeto a los elementos que esta cargando, con "objetoConMayorPeligrosidad()" y "efectoDeAccidente()" entre otros.
+     embalajeDeSeguridad: Emite mensajes del tipo Objeto al elemento que esta embalando actualmente, con "peso()" en (self) "peso()" y "peligrosidad()" en (self) "peligrosidad()" 
    
