@@ -7,6 +7,8 @@ object almacen {
     method almacenarCarga(objetos) {
         cosas.addAll(objetos)
     }
+
+    method cosas() { return cosas }
 }
 
 object ruta9 {
@@ -26,4 +28,6 @@ object caminosVecinales {
     method pesoMaximoPermitido(_pesoMaximoPermitido) {
         pesoMaximoPermitido = _pesoMaximoPermitido
     }
+
+    method pesoMaximoPermitido() { return pesoMaximoPermitido }
 }
