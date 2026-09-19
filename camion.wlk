@@ -7,6 +7,8 @@ object camion {
 	const pesoMaximoAceptable = 2500
 		
 	method cosas() { return cosas }
+	method tara() { return tara }
+	method pesoMaximoAceptable() { return pesoMaximoAceptable }
 
 	method cargar(unaCosa) {
 		self.validarCarga(unaCosa)
